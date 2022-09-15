@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoProcessSql", "GoProcessSql.csproj", "{F85FC315-D48A-43A1-8C6A-E5706C46B9B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RunSql", "..\RunSql\RunSql.csproj", "{6D15D1D7-D51D-4E60-8D6A-256003A3CCC8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F85FC315-D48A-43A1-8C6A-E5706C46B9B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F85FC315-D48A-43A1-8C6A-E5706C46B9B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F85FC315-D48A-43A1-8C6A-E5706C46B9B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F85FC315-D48A-43A1-8C6A-E5706C46B9B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D15D1D7-D51D-4E60-8D6A-256003A3CCC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D15D1D7-D51D-4E60-8D6A-256003A3CCC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D15D1D7-D51D-4E60-8D6A-256003A3CCC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D15D1D7-D51D-4E60-8D6A-256003A3CCC8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A4969C37-DAD1-4D28-9A99-2DB676A1C185}
+	EndGlobalSection
+EndGlobal
