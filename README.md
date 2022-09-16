@@ -1,5 +1,5 @@
 ### sqlbulk2dirx
-## On Russian
+### Ru
 
 Демо пакеты модуля на Go, для копирования данных (sql bulk copy) между таблицами СУБД MSSQL.  
 Дополнительный код на C# для подключения Go-модуля как сторонней библиотеки в Directum RX. 
@@ -12,32 +12,50 @@
 
 Демо код DS, для вызова сторонней либры из Directum RX. Demo code to call outside library from Directum RX:    
 
-	public vittual void ProcessSqlStart()
-	{
-		var role = Roles.GetAll(r => Equals(r.Name, "Администраторы справочников")).FirstOrDefault();
-		if (Users.Current.IncludedIn(role))
-			{
-				GoProcessSql.MyProcess.Main();
-				Dialogs.ShowMessage("Копирование справочника SAP выполнено);
-			}
-			else
-			{
-				Dialogs.ShowMessage("У пользователя нет прав на копирование справочника");
-			}
-	}
-	
+```C#
+public vittual void ProcessSqlStart()
+{
+  var role = Roles.GetAll(r => Equals(r.Name, "Администраторы справочников")).FirstOrDefault();
+  if (Users.Current.IncludedIn(role))
+  {
+    GoProcessSql.MyProcess.Main(); 
+    Dialogs.ShowMessage("Копирование справочника SAP выполнено");
+  }
+  else
+  {
+    Dialogs.ShowMessage("У пользователя нет прав на копирование справочника");
+  }
+}
+```
 В СУБД Directum RX должна быть таблица-справочник: "Администраторы справочников".
 
 
-## On English
+### En
 
-It's demo packages on Go for copying data (sql bulk copy) between DBMS tables of MSSQL. 
+It's demo packages on Go for copying data (sql bulk copy) between DBMS tables of MSSQL.   
 Additional C# code for connecting the Go-module as outside library in Directum RX.   
 
 For execute, run module:  
 
 	mssqlmain
 
-If DSN connection parameters are correct, check if copyed the data in to recipient-table.  
-The Directum RX DBMS should have a reference table: "Directory administrators"
+If DSN connection parameters are correct, check if copyed the data in to recipient-table.    
+The Directum RX DBMS should have a reference table: "Directory administrators".
+
+```mermaid
+graph TB
+
+  SubGraph1 --> SubGraph1Flow
+  subgraph "MSSQL"
+  SubGraph1Flow(DBMS)
+  SubGraph1Flow -- Select --> Donor
+  SubGraph1Flow -- Insert --> Recipient
+  end
+
+  subgraph "Directum RX"
+  Node1[Function Directum RX] --> Node2[C# library `GoProcessSql.dll`]
+  Node2 --> SubGraph1[Go module `mssqlmain`]
+  SubGraph1 --> FinalThing[Show Message]
+end
+```
 
