@@ -1,0 +1,2 @@
+*.go linguist-language=Go
+*.cs linguist-language=C#
