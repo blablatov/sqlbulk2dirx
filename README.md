@@ -8,7 +8,29 @@
  
 	mssqlmain  
 
-Если параметры подключения DSN верны, проверить появление данных в реципиент-таблице.  
+Если параметры подключения DSN верны, проверить появление данных в реципиент-таблице.
+
+***Схема обмена данными между Go-пакетами (scheme exchange of data between Go-packets):***
+			
+```mermaid
+graph TB
+
+  SubGraph1 --> SubGraph1Flow
+  subgraph "Packet DSN"
+  SubGraph1Flow(Create DSN)
+  end
+  
+  SubGraph3 --> SubGraph2Flow
+  subgraph "DBMS MSSQL"
+  SubGraph2Flow(Tables of data in MSSQL)
+  end
+
+  subgraph "Module MSSQL"
+  Node1[Packet write to MSSQL `mssqlmain`] --> SubGraph1[Request to create DSN `mssqldsn`]
+  SubGraph1Flow -- Response with DSN data --> Node1 
+  Node1 --> SubGraph3[BulkCopy method of goroutine packet `sqlinsertrs`]
+end
+```	  
 
 Демо код DS, для вызова сторонней либры из Directum RX. Demo code to call outside library from Directum RX:    
 
@@ -41,6 +63,8 @@ For execute, run module:
 
 If DSN connection parameters are correct, check if copyed the data in to recipient-table.    
 The Directum RX DBMS should have a reference table: "Directory administrators".
+
+***Общая схема обмена (general exchange scheme):***
 
 ```mermaid
 graph TB
