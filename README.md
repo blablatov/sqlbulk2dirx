@@ -22,7 +22,7 @@ graph TB
   
   SubGraph3 --> SubGraph2Flow
   subgraph "DBMS MSSQL"
-  SubGraph2Flow(Tables of data in MSSQL)
+  SubGraph2Flow(Tables of data MSSQL)
   end
 
   subgraph "Module MSSQL"
