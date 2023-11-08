@@ -1,4 +1,4 @@
-### sqlbulk2dirx
+[![Go](https://github.com/blablatov/sqlbulk2dirx/actions/workflows/sqlbulk2dirx-action.yml/badge.svg)](https://github.com/blablatov/sqlbulk2dirx/actions/workflows/sqlbulk2dirx-action.yml)
 ### Ru
 
 Демо пакеты модуля на Go, для копирования данных (sql bulk copy) между таблицами СУБД MSSQL.  
